@@ -59,6 +59,10 @@ export interface ProjectPayload {
   title?: string
 }
 
+export interface ProjectsPayload {
+  projects: ShowcaseProject[]
+}
+
 export interface SettingsPayload {
   footer?: PortableTextBlock[]
   menuItems?: MenuItem[]

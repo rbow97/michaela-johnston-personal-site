@@ -8,6 +8,7 @@ import {
   homePageQuery,
   pagesBySlugQuery,
   projectBySlugQuery,
+  projectsQuery,
   settingsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
@@ -15,7 +16,9 @@ import {
   HomePagePayload,
   PagePayload,
   ProjectPayload,
+  ProjectsPayload,
   SettingsPayload,
+  ShowcaseProject,
 } from '@/types'
 
 const serverClient = client.withConfig({
@@ -69,6 +72,14 @@ export function loadSettings() {
     settingsQuery,
     {},
     { next: { tags: ['settings', 'home', 'page', 'project'] } },
+  )
+}
+
+export function loadProjects() {
+  return loadQuery<ShowcaseProject[]>(
+    projectsQuery,
+    {},
+    { next: { tags: ['project'] } },
   )
 }
 

@@ -16,7 +16,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
     <div className="h-full w-full relative animate-fadeIn">
       {/* Showcase projects */}
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div>
+        <>
           {showcaseProjects.map((project, key) => {
             return (
               <ProjectListItem
@@ -27,7 +27,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
               />
             )
           })}
-        </div>
+        </>
       )}
     </div>
   )
