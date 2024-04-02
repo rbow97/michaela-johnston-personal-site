@@ -6,8 +6,8 @@ import { BiRightArrowAlt } from 'react-icons/bi'
 import { PortableTextBlock } from 'sanity'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import { HomePagePayload } from '@/types'
 import { urlForImage } from '@/sanity/lib/utils'
+import { HomePagePayload } from '@/types'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -24,7 +24,7 @@ export default function HeroImage({
   const project = showcaseProjects[0]
 
   return (
-    <div className="h-full w-full relative  animate-fadeIn">
+    <div className="h-full w-full relative animate-fadeIn">
       <Image
         priority
         width={500}

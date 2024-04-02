@@ -1,4 +1,4 @@
-import HeroImage from '@/components/pages/home/HeroImage'
+import HomePage from '@/components/pages/home/HomePage'
 import { loadHomePage } from '@/sanity/loader/loadQuery'
 
 export default async function Home() {
@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col h-[calc(100%-80px)] md:h-[calc(100%-100px)] overflow-hidden pb-5">
-      <HeroImage data={initial.data} />
+      <HomePage data={initial.data} />
     </main>
   )
 }
