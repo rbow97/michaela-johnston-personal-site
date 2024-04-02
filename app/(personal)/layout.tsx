@@ -1,70 +1,48 @@
-import '@/styles/index.css'
+import './globals.css'
 
-import { toPlainText } from '@portabletext/react'
-import { Metadata, Viewport } from 'next'
-import dynamic from 'next/dynamic'
-import { draftMode } from 'next/headers'
-import { Suspense } from 'react'
+import clsx from 'clsx'
+import type { Metadata } from 'next'
+import { Lexend, Work_Sans } from 'next/font/google'
+import Link from 'next/link'
 
-import { Footer } from '@/components/global/Footer'
-import { Navbar } from '@/components/global/Navbar'
-import IntroTemplate from '@/intro-template'
-import { urlForOpenGraphImage } from '@/sanity/lib/utils'
-import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
+import { NavigationContainer } from '@/components/global/Navbar/NavigationContainer'
+import ThemeButton from '@/components/pages/home/ThemeButton'
 
-const LiveVisualEditing = dynamic(
-  () => import('@/sanity/loader/LiveVisualEditing'),
-)
+import { ThemeContextProvider } from './ThemeContextProvider'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const [{ data: settings }, { data: homePage }] = await Promise.all([
-    loadSettings(),
-    loadHomePage(),
-  ])
+const workSans = Work_Sans({ subsets: ['latin'] })
 
-  const ogImage = urlForOpenGraphImage(settings?.ogImage)
-  return {
-    title: homePage?.title
-      ? {
-          template: `%s | ${homePage.title}`,
-          default: homePage.title || 'Personal website',
-        }
-      : undefined,
-    description: homePage?.overview
-      ? toPlainText(homePage.overview)
-      : undefined,
-    openGraph: {
-      images: ogImage ? [ogImage] : [],
-    },
-  }
+export const metadata: Metadata = {
+  title: 'Michaela Johnston',
+  description: "Michaela Johnston's portfolio",
 }
 
-export const viewport: Viewport = {
-  themeColor: '#000',
-}
-
-export default async function IndexRoute({
+export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <>
-      <div className="flex min-h-screen flex-col bg-white text-black">
-        <Suspense>
-          <Navbar />
-        </Suspense>
-        <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">
-          <Suspense>{children}</Suspense>
-        </div>
-        <Suspense>
-          <Footer />
-        </Suspense>
-        <Suspense>
-          <IntroTemplate />
-        </Suspense>
-      </div>
-      {draftMode().isEnabled && <LiveVisualEditing />}
-    </>
+    <html lang="en" suppressHydrationWarning>
+      <ThemeContextProvider>
+        <body
+          className={clsx(
+            'bg-background text-copy mx-auto px-5 max-w-screen-xl',
+            workSans.className,
+          )}
+        >
+          <header className="flex items-center gap-4 h-[80px] md:h-[100px]">
+            <p className="text-primary-dark text-2xl md:text-4xl order-1 md:order-0">
+              <Link className="" href="/">
+                Michaela Johnston
+              </Link>
+            </p>
+            <NavigationContainer className="order-2 md:order-1 ml-auto" />
+            <ThemeButton className="order-0 md:order-2" />
+          </header>
+          {children}
+        </body>
+      </ThemeContextProvider>
+    </html>
   )
 }

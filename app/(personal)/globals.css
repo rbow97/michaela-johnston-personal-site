@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --primary: 179, 187, 229;
+  --primary-content: 39, 51, 114;
+  --primary-dark: 141, 153, 216;
+  --primary-light: 217, 221, 242;
+
+  --secondary: 229, 179, 212;
+  --secondary-content: 114, 39, 88;
+  --secondary-dark: 216, 141, 190;
+  --secondary-light: 242, 217, 233;
+
+  --background: 239, 239, 241;
+  --foreground: 251, 251, 251;
+  --border: 221, 221, 226;
+
+  --copy: 35, 36, 41;
+  --copy-light: 94, 97, 110;
+  --copy-lighter: 132, 134, 149;
+
+  --success: 179, 229, 179;
+  --warning: 229, 229, 179;
+  --error: 229, 179, 179;
+  --success-content: 39, 114, 39;
+  --warning-content: 114, 114, 39;
+  --error-content: 114, 39, 39;
+}
+
+.light {
+  --primary: 179, 187, 229;
+  --primary-content: 39, 51, 114;
+  --primary-dark: 141, 153, 216;
+  --primary-light: 217, 221, 242;
+
+  --secondary: 229, 179, 212;
+  --secondary-content: 114, 39, 88;
+  --secondary-dark: 216, 141, 190;
+  --secondary-light: 242, 217, 233;
+
+  --background: 239, 239, 241;
+  --foreground: 251, 251, 251;
+  --border: 221, 221, 226;
+
+  --copy: 35, 36, 41;
+  --copy-light: 94, 97, 110;
+  --copy-lighter: 132, 134, 149;
+
+  --success: 179, 229, 179;
+  --warning: 229, 229, 179;
+  --error: 229, 179, 179;
+  --success-content: 39, 114, 39;
+  --warning-content: 114, 114, 39;
+  --error-content: 114, 39, 39;
+}
+
+.dark {
+  --primary: 83, 96, 159;
+  --primary-content: 246, 247, 251;
+  --primary-dark: 66, 76, 125;
+  --primary-light: 112, 124, 181;
+
+  --secondary: 159, 83, 134;
+  --secondary-content: 251, 246, 249;
+  --secondary-dark: 125, 66, 106;
+  --secondary-light: 181, 112, 158;
+
+  --background: 24, 24, 27;
+  --foreground: 35, 36, 41;
+  --border: 59, 61, 69;
+
+  --copy: 251, 251, 251;
+  --copy-light: 214, 215, 220;
+  --copy-lighter: 159, 161, 172;
+
+  --success: 83, 159, 83;
+  --warning: 159, 159, 83;
+  --error: 159, 83, 83;
+  --success-content: 246, 251, 246;
+  --warning-content: 0, 0, 0;
+  --error-content: 251, 246, 246;
+}
