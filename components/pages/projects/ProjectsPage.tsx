@@ -13,7 +13,7 @@ export interface ProjectPageProps {
 
 export function ProjectsPage({ projects }: ProjectPageProps) {
   return (
-    <section className="h-[calc(100%-80px)] md:h-[calc(100%-100px)] animate-fadeIn">
+    <section className="animate-fadeIn mx-auto px-5 max-w-screen-xl">
       {/* Header */}
       <Header title="Projects" />
 

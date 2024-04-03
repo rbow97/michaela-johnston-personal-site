@@ -42,11 +42,17 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   const router = useRouter()
 
   return (
-    <div className="animate-fadeIn">
+    <div className="animate-fadeIn mx-auto px-5 max-w-screen-xl">
       <section className="min-h-[calc(100%_-_100px)] pb-10">
         {/* Header */}
-        <p className="pb-6 md:pb-12 text-primary text-sm w-fit">
-          <Link href="/projects">Projects</Link> / {title}
+        <p className="pb-6 md:pb-12 text-copy text-sm w-fit">
+          <Link
+            href="/projects"
+            className="hover:text-primary transition ease duration-1"
+          >
+            Projects
+          </Link>{' '}
+          / {title}
         </p>
         <div className="flex flex-col md:grid grid-cols-[1fr_1fr] md:flex-row gap-6 md:gap-16">
           <div className="flex flex-col gap-6">
@@ -59,7 +65,10 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
             <h1 className="font-semibold text-copy text-5xl">{title}</h1>
             {overview && (
               <div className="text-copy text-xl">
-                <CustomPortableText value={overview} />
+                <CustomPortableText
+                  value={overview}
+                  paragraphClasses="mb-6 md:mb-12"
+                />
               </div>
             )}
           </div>
@@ -148,7 +157,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
       {/* Description */}
       {description && (
         <CustomPortableText
-          paragraphClasses="text-xl text-copy"
+          paragraphClasses="text-xl text-copy mb-6 md:mb-12"
           value={description}
         />
       )}

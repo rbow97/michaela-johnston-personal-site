@@ -54,7 +54,7 @@ export function NavigationContainer({
           menuItems={menuItems}
           className={clsx(
             // Mobile
-            'fixed flex items-center justify-center text-4xl md:text-lg top-0 left-5 right-5 z-20 overflow-hidden h-full bg-background',
+            'fixed flex items-center justify-center text-4xl md:text-lg top-0 left-0 right-0 z-20 overflow-hidden h-full bg-background ',
 
             // Desktop
             'md:static md:z-0 md:flex md:justify-end md:items-center',

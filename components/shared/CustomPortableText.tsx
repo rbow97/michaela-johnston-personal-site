@@ -15,7 +15,7 @@ export function CustomPortableText({
   const components: PortableTextComponents = {
     block: {
       normal: ({ children }) => {
-        return <p className={`mb-6 md:mb-12 ${paragraphClasses}`}>{children}</p>
+        return <p className={paragraphClasses}>{children}</p>
       },
     },
     list: {

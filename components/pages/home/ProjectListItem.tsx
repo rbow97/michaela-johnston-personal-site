@@ -52,7 +52,10 @@ function TextBox({
     <div className="bg-foreground/50 p-8 rounded-md absolute bottom-6 left-6 mr-6 z-10 flex flex-col gap-2 max-w-[500px] text-copy">
       <h2 className="font-semibold ">{project.title}</h2>
       <div className="line-clamp-2">
-        <CustomPortableText value={project.overview as PortableTextBlock[]} />
+        <CustomPortableText
+          paragraphClasses="mb-6 md:mb-12"
+          value={project.overview as PortableTextBlock[]}
+        />
       </div>
       <Link
         href={href}

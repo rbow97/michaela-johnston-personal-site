@@ -5,7 +5,7 @@ export default async function Home() {
   const initial = await loadHomePage()
 
   return (
-    <main className="flex flex-col h-[calc(100%-80px)] md:h-[calc(100%-100px)] overflow-hidden pb-5">
+    <main className="flex h-full flex-col overflow-hidden mx-auto px-5 max-w-screen-xl">
       <HomePage data={initial.data} />
     </main>
   )
