@@ -42,8 +42,9 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
 
   return (
     <div className="animate-fadeIn">
-      <section className="min-h-[calc(100%_-_100px)] pt-8 md:pt-16 pb-10">
+      <section className="min-h-[calc(100%_-_100px)] pb-10">
         {/* Header */}
+        <p className="pb-6 md:pb-12 text-primary">Projects / {title}</p>
         <div className="flex flex-col md:grid grid-cols-[1fr_1fr] md:flex-row gap-6 md:gap-16">
           <div className="flex flex-col gap-6">
             <button
@@ -147,7 +148,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
       {/* Description */}
       {description && (
         <CustomPortableText
-          paragraphClasses="text-xl text-copy mb-3 md:mb-6"
+          paragraphClasses="text-xl text-copy"
           value={description}
         />
       )}

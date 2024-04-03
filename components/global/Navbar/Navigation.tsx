@@ -28,7 +28,7 @@ export default function Navigation({
             <li
               key={item.title}
               className={clsx(
-                pathname === `/${item.title?.toLowerCase()}`
+                pathname.includes(`/${item.title?.toLowerCase()}`)
                   ? 'text-secondary-dark'
                   : 'text-copy',
               )}
