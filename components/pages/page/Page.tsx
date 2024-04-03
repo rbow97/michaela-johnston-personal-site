@@ -15,7 +15,6 @@ export function Page({ data }: PageProps) {
       <div className="mb-14 animate-fadeIn">
         {/* Header */}
         <Header title={title} description={overview} />
-
         {/* Body */}
         {body && (
           <CustomPortableText

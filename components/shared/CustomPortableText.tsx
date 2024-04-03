@@ -22,7 +22,7 @@ export function CustomPortableText({
       link: ({ children, value }) => {
         return (
           <a
-            className="underline transition hover:opacity-50"
+            className="underline text-primary-dark transition hover:opacity-50"
             href={value?.href}
             rel="noreferrer noopener"
           >
@@ -45,7 +45,7 @@ export function CustomPortableText({
               classesWrapper="relative aspect-[16/9]"
             />
             {value?.caption && (
-              <div className="text-sm text-gray-600">{value.caption}</div>
+              <div className="text-sm text-copy-light">{value.caption}</div>
             )}
           </div>
         )

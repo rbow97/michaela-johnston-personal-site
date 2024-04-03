@@ -28,6 +28,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
     client,
     coverImage,
     description,
+    imageGrid,
     duration,
     overview,
     site,
@@ -116,7 +117,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
               {site && (
                 <Link
                   target="_blank"
-                  className="text-md break-words md:text-lg"
+                  className="text-md text-primary-dark break-words md:text-lg"
                   href={site}
                 >
                   {site}
@@ -151,6 +152,24 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
           paragraphClasses="text-xl text-copy mb-3 md:mb-6"
           value={description}
         />
+      )}
+
+      {/* ImageGrid */}
+      {imageGrid && (
+        <div className="flex flex-col md:grid grid-cols-[1fr_1fr] md:gap-6 gap-3">
+          {imageGrid.map((image) => (
+            <div key={image.caption} className="space-y-2">
+              <ImageBox
+                image={image}
+                alt={image.alt}
+                classesWrapper="relative col-span-1 aspect-[16/9]"
+              />
+              {image?.caption && (
+                <div className="text-sm text-copy-light">{image.caption}</div>
+              )}
+            </div>
+          ))}
+        </div>
       )}
     </div>
   )

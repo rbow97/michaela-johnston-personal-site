@@ -5,9 +5,9 @@ import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
 import { Page } from '@/components/pages/page/Page'
+import ProjectsPage from '@/components/pages/projects/ProjectsPage'
 import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
 import { loadPage, loadProjects } from '@/sanity/loader/loadQuery'
-import ProjectsPage from '@/components/pages/projects/ProjectsPage'
 const PagePreview = dynamic(() => import('@/components/pages/page/PagePreview'))
 
 type Props = {

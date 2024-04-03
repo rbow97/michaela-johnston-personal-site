@@ -48,6 +48,7 @@ export interface ProjectPayload {
   client?: string
   coverImage?: Image
   description?: PortableTextBlock[]
+  imageGrid?: { asset: Image; alt?: string; caption?: string }[]
   duration?: {
     start?: string
     end?: string

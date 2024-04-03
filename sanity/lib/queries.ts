@@ -43,6 +43,7 @@ export const projectBySlugQuery = groq`
     client,
     coverImage,
     description,
+    imageGrid,
     duration,
     overview,
     site,

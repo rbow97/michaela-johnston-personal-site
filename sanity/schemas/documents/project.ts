@@ -157,7 +157,25 @@ export default defineType({
       type: 'array',
       title: 'Image Grid',
       description: 'Grid layout for multiple images in one go.',
-      of: [{ type: 'image' }],
+      of: [
+        {
+          type: 'image',
+          fields: [
+            defineField({
+              title: 'Caption',
+              name: 'caption',
+              type: 'string',
+            }),
+            defineField({
+              name: 'alt',
+              type: 'string',
+              title: 'Alt text',
+              description:
+                'Alternative text for screenreaders. Falls back on caption if not set',
+            }),
+          ],
+        },
+      ],
     }),
   ],
 })
