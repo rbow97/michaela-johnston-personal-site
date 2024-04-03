@@ -1,8 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 
+import { Header } from '@/components/shared/Header'
+import ImageBox from '@/components/shared/ImageBox'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { ShowcaseProject } from '@/types'
 
@@ -12,8 +13,12 @@ export interface ProjectPageProps {
 
 export function ProjectsPage({ projects }: ProjectPageProps) {
   return (
-    <section className="h-[calc(100%-80px)] md:h-[calc(100%-100px)] pt-8 md:pt-16">
-      <ul className="flex max-w-md md:max-w-5xl mx-auto flex-wrap justify-between animate-fadeIn">
+    <section className="h-[calc(100%-80px)] md:h-[calc(100%-100px)] animate-fadeIn">
+      {/* Header */}
+      <Header title="Projects" />
+
+      {/* Projects */}
+      <ul className="flex flex-col md:grid grid-cols-[1fr_1fr] justify-between gap-5 md:gap-10 mt-4 md:mt-8">
         {projects ? (
           projects.map((project, i) => {
             const href = resolveHref(project?._type, project?.slug)
@@ -24,28 +29,23 @@ export function ProjectsPage({ projects }: ProjectPageProps) {
             return (
               <li
                 key={project.title}
-                className="flex flex-col gap-2 h-fit w-full md:w-1/2 px-8 py-3 "
+                className="flex flex-col gap-2 h-fit w-full col-span-1"
               >
                 <article>
-                  <Link
-                    className="h-[360px] md:h-[calc(50vw-60px)] lg:h-[440px] min-h-[340px] block"
-                    href={href}
-                  >
-                    <div className=" h-full w-full relative overflow-hidden rounded-md">
-                      <Image
-                        width={500}
-                        height={300}
-                        sizes="100vw"
-                        className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-[250ms] ease"
-                        src="/images/work-image.jpg"
-                        alt="placeholder"
+                  <Link className=" block" href={href}>
+                    <div>
+                      {/* Image  */}
+                      <ImageBox
+                        image={project.coverImage}
+                        classesWrapper="relative aspect-[16/9] "
+                        imageClassName="hover:scale-110 transition-all duration-[250ms]"
                       />
                     </div>
                   </Link>
-                  <div className="pt-6">
-                    <h2 className="text-xl text-copy w-fit hover:text-secondary transition-colors duration-[250ms] ease">
+                  <div className="pt-2 md:pt-3">
+                    <p className="text-lg text-copy w-fit hover:text-secondary transition-colors duration-[250ms] ease">
                       <Link href={href}>{project.title}</Link>
-                    </h2>
+                    </p>
                   </div>
                 </article>
               </li>

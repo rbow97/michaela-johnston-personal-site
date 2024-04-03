@@ -67,8 +67,6 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
             <ImageBox
               data-sanity={encodeDataAttribute?.('coverImage')}
               image={coverImage}
-              // @TODO add alt field in schema
-              alt=""
               classesWrapper="relative aspect-[16/9]"
             />
           </div>
