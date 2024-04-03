@@ -1,9 +1,8 @@
 'use client'
 
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader'
-import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import {
   BiArrowBack,
   BiCopy,
@@ -15,7 +14,6 @@ import {
 } from 'react-icons/bi'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import { Header } from '@/components/shared/Header'
 import ImageBox from '@/components/shared/ImageBox'
 import type { ProjectPayload } from '@/types'
 
@@ -39,26 +37,26 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
 
   const startYear = new Date(duration?.start!).getFullYear()
   const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
+  const router = useRouter()
 
   return (
-    <div>
-      <section className="min-h-[calc(100%_-_100px)] pt-8 md:pt-16 pb-10 md:pb-16 animate-fadeIn">
+    <div className="animate-fadeIn">
+      <section className="min-h-[calc(100%_-_100px)] pt-8 md:pt-16 pb-10">
         {/* Header */}
-        {/* <Header title={title} description={overview} /> */}
         <div className="flex flex-col md:grid grid-cols-[1fr_1fr] md:flex-row gap-6 md:gap-16">
           <div className="flex flex-col gap-6">
             <button
               className="flex gap-2 items-center text-left"
-              // onClick={() => router.push('/work')}
+              onClick={() => router.push('/projects')}
             >
               <BiArrowBack />
-              <p>Back to work</p>
+              <p>Back to Projects</p>
             </button>
 
             {/* Header and overview */}
-            <h1 className="font-semibold text-copy text-6xl">{title}</h1>
+            <h1 className="font-semibold text-copy text-5xl">{title}</h1>
             {overview && (
-              <div className="text-copy text-2xl">
+              <div className="text-copy text-xl">
                 <CustomPortableText value={overview} />
               </div>
             )}
@@ -150,7 +148,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
       {/* Description */}
       {description && (
         <CustomPortableText
-          paragraphClasses="text-xl text-gray-600"
+          paragraphClasses="text-xl text-copy mb-3 md:mb-6"
           value={description}
         />
       )}

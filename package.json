@@ -1,5 +1,5 @@
 {
-  "name": "sanity-template-template-nextjs-personal-website",
+  "name": "michaela-johnston-personal-site",
   "private": true,
   "scripts": {
     "build": "next build",

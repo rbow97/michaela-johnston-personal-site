@@ -1,24 +1,10 @@
 'use client'
 
-import type { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import {
-  BiArrowBack,
-  BiCopy,
-  BiDownArrowAlt,
-  BiLogoFacebook,
-  BiLogoInstagram,
-  BiLogoTwitter,
-  BiLogoWhatsapp,
-} from 'react-icons/bi'
 
-import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import { Header } from '@/components/shared/Header'
-import ImageBox from '@/components/shared/ImageBox'
-import type { ProjectPayload, ProjectsPayload, ShowcaseProject } from '@/types'
 import { resolveHref } from '@/sanity/lib/utils'
+import type { ShowcaseProject } from '@/types'
 
 export interface ProjectPageProps {
   projects: ShowcaseProject[] | null

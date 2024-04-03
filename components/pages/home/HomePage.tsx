@@ -10,7 +10,7 @@ export interface HomePageProps {
 
 export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
-  const { overview = [], showcaseProjects = [], title = '' } = data ?? {}
+  const { showcaseProjects = [] } = data ?? {}
 
   return (
     <div className="h-full w-full relative animate-fadeIn">

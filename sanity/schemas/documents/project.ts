@@ -152,5 +152,12 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'imageGrid',
+      type: 'array',
+      title: 'Image Grid',
+      description: 'Grid layout for multiple images in one go.',
+      of: [{ type: 'image' }],
+    }),
   ],
 })

@@ -9,6 +9,7 @@ import { NavigationContainer } from '@/components/global/Navbar/NavigationContai
 import ThemeButton from '@/components/pages/home/ThemeButton'
 
 import { ThemeContextProvider } from './ThemeContextProvider'
+import { Navbar } from '@/components/global/Navbar'
 
 const workSans = Work_Sans({ subsets: ['latin'] })
 
@@ -37,7 +38,7 @@ export default function RootLayout({
                 Michaela Johnston
               </Link>
             </p>
-            <NavigationContainer className="order-2 md:order-1 ml-auto" />
+            <Navbar />
             <ThemeButton className="order-0 md:order-2" />
           </header>
           {children}

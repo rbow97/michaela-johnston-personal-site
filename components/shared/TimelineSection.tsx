@@ -8,11 +8,11 @@ interface TimelineItem {
 
 export function TimelineSection({ timelines }: { timelines: TimelineItem[] }) {
   return (
-    <div className="flex flex-col gap-4 pt-16 text-black md:flex-row">
+    <div className="flex flex-col gap-4 pt-16 text-copy md:flex-row">
       {timelines?.map((timeline, key) => {
         const { title, milestones } = timeline
         return (
-          <div key={key}>
+          <div key={key} className="md:max-w-[50%]">
             <div className="pb-5 text-xl font-bold">{title}</div>
 
             {milestones?.map((experience, index) => (
