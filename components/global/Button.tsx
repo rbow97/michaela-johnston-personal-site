@@ -11,7 +11,7 @@ export default function Button(props: Props): JSX.Element {
   return (
     <button
       className={clsx(
-        'flex items-center gap-2 py-2 px-4 rounded-md h-fit',
+        'flex items-center gap-2 py-2 px-4 rounded-md h-fit w-fit bg-foreground text-sm',
         className,
       )}
       {...buttonProps}

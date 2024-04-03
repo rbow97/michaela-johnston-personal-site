@@ -27,11 +27,11 @@ export default function Navigation({
           return (
             <li
               key={item.title}
-              className={clsx(
+              className={`hover:text-secondary-dark ${clsx(
                 pathname.includes(`/${item.title?.toLowerCase()}`)
                   ? 'text-secondary-dark'
                   : 'text-copy',
-              )}
+              )}`}
             >
               <Link href={href}>{item.title}</Link>
             </li>

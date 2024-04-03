@@ -13,6 +13,7 @@ import {
   BiLogoWhatsapp,
 } from 'react-icons/bi'
 
+import Button from '@/components/global/Button'
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
 import type { ProjectPayload } from '@/types'
@@ -44,16 +45,15 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
     <div className="animate-fadeIn">
       <section className="min-h-[calc(100%_-_100px)] pb-10">
         {/* Header */}
-        <p className="pb-6 md:pb-12 text-primary">Projects / {title}</p>
+        <p className="pb-6 md:pb-12 text-primary text-sm w-fit">
+          <Link href="/projects">Projects</Link> / {title}
+        </p>
         <div className="flex flex-col md:grid grid-cols-[1fr_1fr] md:flex-row gap-6 md:gap-16">
           <div className="flex flex-col gap-6">
-            <button
-              className="flex gap-2 items-center text-left"
-              onClick={() => router.push('/projects')}
-            >
+            <Button onClick={() => router.push('/projects')}>
               <BiArrowBack />
               <p>Back to Projects</p>
-            </button>
+            </Button>
 
             {/* Header and overview */}
             <h1 className="font-semibold text-copy text-5xl">{title}</h1>

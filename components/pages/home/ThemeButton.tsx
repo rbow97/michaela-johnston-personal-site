@@ -12,7 +12,7 @@ function ThemeButton({ className }: { className?: string }): JSX.Element {
 
   return (
     <Button
-      className={clsx('text-copy-light bg-foreground', className)}
+      className={clsx('text-copy-light', className)}
       onClick={() => toggleThemeHandler()}
     >
       {isDarkTheme ? <FiSun /> : <FiMoon />}
