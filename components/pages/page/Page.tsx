@@ -12,19 +12,18 @@ export function Page({ data }: PageProps) {
 
   return (
     <div>
-      <div className="mb-14">
+      <div className="mb-14 animate-fadeIn">
         {/* Header */}
         <Header title={title} description={overview} />
 
         {/* Body */}
         {body && (
           <CustomPortableText
-            paragraphClasses="text-gray-600 text-xl"
+            paragraphClasses="text-copy text-xl"
             value={body}
           />
         )}
       </div>
-      <div className="absolute left-0 w-screen border-t" />
     </div>
   )
 }

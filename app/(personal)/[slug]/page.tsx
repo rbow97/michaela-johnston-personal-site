@@ -6,7 +6,8 @@ import { notFound } from 'next/navigation'
 
 import { Page } from '@/components/pages/page/Page'
 import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
-import { loadPage } from '@/sanity/loader/loadQuery'
+import { loadPage, loadProjects } from '@/sanity/loader/loadQuery'
+import ProjectsPage from '@/components/pages/projects/ProjectsPage'
 const PagePreview = dynamic(() => import('@/components/pages/page/PagePreview'))
 
 type Props = {
@@ -33,6 +34,7 @@ export function generateStaticParams() {
 
 export default async function PageSlugRoute({ params }: Props) {
   const initial = await loadPage(params.slug)
+  const projects = await loadProjects()
 
   if (draftMode().isEnabled) {
     return <PagePreview params={params} initial={initial} />
@@ -42,5 +44,7 @@ export default async function PageSlugRoute({ params }: Props) {
     notFound()
   }
 
-  return <Page data={initial.data} />
+  if (params.slug === 'projects')
+    return <ProjectsPage projects={projects.data} />
+  else return <Page data={initial.data} />
 }
