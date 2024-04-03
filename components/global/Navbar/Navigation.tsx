@@ -23,7 +23,6 @@ export default function Navigation({
           if (!href) {
             return null
           }
-          console.log(pathname, item.title)
 
           return (
             <li

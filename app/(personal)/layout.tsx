@@ -2,14 +2,13 @@ import './globals.css'
 
 import clsx from 'clsx'
 import type { Metadata } from 'next'
-import { Lexend, Work_Sans } from 'next/font/google'
+import { Work_Sans } from 'next/font/google'
 import Link from 'next/link'
 
-import { NavigationContainer } from '@/components/global/Navbar/NavigationContainer'
+import { Navbar } from '@/components/global/Navbar'
 import ThemeButton from '@/components/pages/home/ThemeButton'
 
 import { ThemeContextProvider } from './ThemeContextProvider'
-import { Navbar } from '@/components/global/Navbar'
 
 const workSans = Work_Sans({ subsets: ['latin'] })
 
