@@ -61,7 +61,16 @@ export interface ProjectPayload {
 }
 
 export interface ProjectsPayload {
-  projects: ShowcaseProject[]
+  _type: string
+  coverImage?: Image
+  overview?: PortableTextBlock[]
+  slug?: string
+  tags?: string[]
+  title?: string
+  duration?: {
+    start?: string
+    end?: string
+  }
 }
 
 export interface SettingsPayload {

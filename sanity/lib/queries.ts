@@ -24,6 +24,7 @@ export const projectsQuery = groq`
     "slug": slug.current,
     tags,
     title,
+    duration,
   }
 `
 
