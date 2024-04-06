@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 import { Header } from '@/components/shared/Header'
 import ImageBox from '@/components/shared/ImageBox'
@@ -9,9 +10,15 @@ import type { ProjectsPayload } from '@/types'
 
 export interface ProjectPageProps {
   projects: ProjectsPayload[] | null
+  title?: string
+  description?: any[]
 }
 
-export function ProjectsPage({ projects }: ProjectPageProps) {
+export function ProjectsPage({
+  projects,
+  title,
+  description,
+}: ProjectPageProps) {
   // Sorting the array based on the 'date' property
   projects
     ?.sort((a, b) => {
@@ -30,7 +37,7 @@ export function ProjectsPage({ projects }: ProjectPageProps) {
   return (
     <section className="animate-fadeIn mx-auto px-5 max-w-screen-xl">
       {/* Header */}
-      <Header title="Projects" />
+      <Header title={title} description={description} />
 
       {/* Projects */}
       <ul className="flex flex-col md:grid grid-cols-[1fr_1fr] [&>li:nth-child(1)]:col-span-2 [&>li:nth-child(3n+4)]:col-span-2 justify-between gap-5 md:gap-10 mt-4 md:mt-8">

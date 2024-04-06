@@ -16,6 +16,7 @@ import {
   HomePagePayload,
   PagePayload,
   ProjectPayload,
+  ProjectsPayload,
   SettingsPayload,
   ShowcaseProject,
 } from '@/types'
@@ -75,7 +76,7 @@ export function loadSettings() {
 }
 
 export function loadProjects() {
-  return loadQuery<ProjectPayload[]>(
+  return loadQuery<ProjectsPayload[]>(
     projectsQuery,
     {},
     { next: { tags: ['project'] } },

@@ -10,16 +10,17 @@ import type { ShowcaseProject } from '@/types'
 
 interface ProjectProps {
   project: ShowcaseProject
-  odd: number
   key: number
   encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
 export function ProjectListItem(props: ProjectProps) {
-  const { project, encodeDataAttribute, key, odd } = props
-
+  const { project, encodeDataAttribute, key } = props
   return (
-    <div className="h-full w-full relative animate-fadeIn">
+    <li
+      className="h-full w-full relative shrink-0 snap-start"
+      id={`slide-${project.slug}`}
+    >
       <ImageBox
         image={project.coverImage}
         alt={`Cover image from ${project.title}`}
@@ -30,7 +31,7 @@ export function ProjectListItem(props: ProjectProps) {
         encodeDataAttribute={encodeDataAttribute}
         project={project}
       />
-    </div>
+    </li>
   )
 }
 

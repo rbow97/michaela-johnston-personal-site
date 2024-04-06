@@ -4,9 +4,10 @@ interface HeaderProps {
   centered?: boolean
   description?: any[]
   title?: string
+  paragraphClasses?: string
 }
 export function Header(props: HeaderProps) {
-  const { title, description, centered = false } = props
+  const { title, description, paragraphClasses, centered = false } = props
   if (!description && !title) {
     return null
   }
@@ -22,7 +23,8 @@ export function Header(props: HeaderProps) {
       {description && (
         <div className="mt-4 text-lg text-copy md:text-xl">
           <CustomPortableText
-            paragraphClasses="mb-6 md:mb-12"
+            // paragraphClasses="mb-6 md:mb-12"
+            paragraphClasses={paragraphClasses}
             value={description}
           />
         </div>

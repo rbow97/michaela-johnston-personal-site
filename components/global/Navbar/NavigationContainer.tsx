@@ -16,7 +16,7 @@ export function NavigationContainer({
   className?: string
   data: SettingsPayload
 }): JSX.Element {
-  const [displayNav, setDisplayNav] = useState(true)
+  const [displayNav, setDisplayNav] = useState(false)
   const pathname = usePathname()
   const menuItems = data?.menuItems || ([] as MenuItem[])
 
@@ -35,8 +35,8 @@ export function NavigationContainer({
 
   // Close mobie nav on re routing
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setDisplayNav(false)
+    if (window.innerWidth > 768) {
+      setDisplayNav(true)
     }
   }, [pathname])
 

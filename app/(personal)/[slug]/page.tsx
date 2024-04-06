@@ -45,6 +45,12 @@ export default async function PageSlugRoute({ params }: Props) {
   }
 
   if (params.slug === 'projects')
-    return <ProjectsPage projects={projects.data} />
+    return (
+      <ProjectsPage
+        title={initial.data.title}
+        description={initial.data.overview}
+        projects={projects.data}
+      />
+    )
   else return <Page data={initial.data} />
 }

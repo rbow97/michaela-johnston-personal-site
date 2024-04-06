@@ -10,7 +10,7 @@ export async function Navbar() {
 
   return (
     <NavigationContainer
-      className="order-2 md:order-1 ml-auto"
+      className="order-2 md:order-1 md:ml-auto"
       data={initial.data}
     />
   )

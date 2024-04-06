@@ -33,7 +33,7 @@ export default function RootLayout({
           )}
         >
           <div className="">
-            <header className="flex items-center gap-4 py-4 md:py-8 w-full max-w-screen-xl px-5 mx-auto">
+            <header className="flex justify-between items-center gap-4 py-4 md:py-8 w-full max-w-screen-xl px-5 mx-auto">
               <p className="text-primary-dark text-xl md:text-4xl order-1 md:order-0">
                 <Link className="" href="/">
                   Michaela Johnston
