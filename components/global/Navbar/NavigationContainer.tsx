@@ -33,10 +33,17 @@ export function NavigationContainer({
     window.addEventListener('resize', handleResize)
   })
 
-  // Close mobie nav on re routing
+  // Display normal on large screens
   useEffect(() => {
     if (window.innerWidth > 768) {
       setDisplayNav(true)
+    }
+  }, [])
+
+  // Close mobie nav on re routing
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setDisplayNav(false)
     }
   }, [pathname])
 
